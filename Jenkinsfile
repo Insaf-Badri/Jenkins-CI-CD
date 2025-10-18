@@ -51,9 +51,6 @@ pipeline{
         stage(Deploy){
              steps {
                 echo 'Starting Flask app locally using Gunicorn...'
-                bat """
-                echo Gunicorn started on http:/127.0.1.1:5000
-                """
             }
         }
 
@@ -61,6 +58,7 @@ pipeline{
 
 }
     
+
 
 
 
