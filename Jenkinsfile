@@ -22,11 +22,26 @@ pipeline{
         }
 
         stage(Tests){
-            steps{
-                bat """
-                call .venv\\Scripts\\activate
-                python -m pytest test_app.py -v
-                """
+
+
+            parllel{
+                stage(test1){
+                    steps{
+                         bat """
+                        call .venv\\Scripts\\activate
+                        python -m pytest test_app.py -v
+                        """
+                    }
+                }
+
+                stage(test2){
+                    steps{
+                         bat """
+                        call .venv\\Scripts\\activate
+                        python -m pytest test_app_2.py -v
+                        """
+                    }
+                }
             }
         }
 
@@ -45,6 +60,7 @@ pipeline{
 
 }
     
+
 
 
 
