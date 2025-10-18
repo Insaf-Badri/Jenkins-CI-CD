@@ -9,7 +9,7 @@ pipeline{
             }
         }
 
-        stage(Setup Venv){
+        stage(Setup){
             steps{
                 bat """
                 python -m venv .venv
@@ -44,5 +44,6 @@ pipeline{
 
 }
     
+
 
 
