@@ -22,6 +22,11 @@ pipeline{
         }
 
         stage(Tests){
+            when{
+                not{
+                    changeset ""**/README.md""
+                }
+            }
             parallel{
                 stage(test1){
                     steps{
@@ -58,6 +63,7 @@ pipeline{
 
 }
     
+
 
 
 
