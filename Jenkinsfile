@@ -22,9 +22,7 @@ pipeline{
         }
 
         stage(Tests){
-
-
-            parllel{
+            parallel{
                 stage(test1){
                     steps{
                          bat """
@@ -60,6 +58,7 @@ pipeline{
 
 }
     
+
 
 
 
