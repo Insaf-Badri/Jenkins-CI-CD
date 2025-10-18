@@ -21,7 +21,7 @@ pipeline{
             }
         }
 
-        stage(Run Tests){
+        stage(Tests){
             steps{
                 bat """
                 python -m pytest test_app.py -v
@@ -44,6 +44,7 @@ pipeline{
 
 }
     
+
 
 
 
